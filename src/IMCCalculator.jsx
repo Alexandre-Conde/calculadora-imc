@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function IMCCalculator() {
+export default function IMCCalculator() {
   const [peso, setPeso] = useState("");
   const [altura, setAltura] = useState("");
   const [resultado, setResultado] = useState("");
@@ -9,7 +9,7 @@ function IMCCalculator() {
     const imc = peso / (altura * altura);
     let classificacao = "";
 
-    if (imc < 18.5) classificacao = "Baixo peso";
+    if (imc < 18.5) classificacao = "Abaixo do peso ideal";
     else if (imc < 24.9) classificacao = "Eutrofia (peso adequado)";
     else if (imc < 29.9) classificacao = "Sobrepeso";
     else if (imc < 34.9) classificacao = "Obesidade grau 1";
@@ -21,22 +21,25 @@ function IMCCalculator() {
 
   return (
     <div>
+      <p></p>
       <input
         type="number"
         placeholder="Peso em kg"
         value={peso}
         onChange={(e) => setPeso(e.target.value)}
       />
+      <p></p>
       <input
         type="number"
         placeholder="Altura em metros"
         value={altura}
         onChange={(e) => setAltura(e.target.value)}
       />
-      <button onClick={calcularIMC}>Calcular IMC</button>
+      <p></p>
+      <button onClick={calcularIMC}> Calcular IMC </button>
+      <p></p>
       {resultado && <p>{resultado}</p>}
     </div>
   );
 }
 
-export default IMCCalculator;

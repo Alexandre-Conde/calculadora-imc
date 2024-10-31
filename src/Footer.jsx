@@ -1,11 +1,13 @@
 import React from "react";
 
-function Footer() {
+export default function Footer() {
   return (
+    
     <div>
-      <p> Aluno: Alexandre Lourenço Conde </p>
+      <p> Professor - Roni </p>
+
+      <p> Aluno - Alexandre Conde </p>
     </div>
   );
 }
 
-export default Footer;
